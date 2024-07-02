@@ -1,0 +1,40 @@
+Aunthentication and Authorization
+HTTP is stateless
+
+we start by installing JWT(JSON Web Toke) 
+pip install flask-jwt-extended
+
+to get a secret key you run python3 
+on the prompt you write >> import os; os.urandom(15).hex()
+
+next we install;
+pip install flask-restful
+
+for passwords to be hashed you need to use Bcrypt and we install it by;
+pip install flask-bcrypt
+
+# register
+on postman;
+endpoint/auth/register
+use POST set headers key as Content-Type and value as application/json
+on body set raw and add this;
+{
+    "email": "kelvin@gmail.com",
+    "password": "12345678",
+    "password2": "12345678"
+}
+
+
+# login
+on postman;
+endpoint/auth/login
+use POST set headers key as Content-Type and value as application/json
+set body set raw and add this;
+{
+    "email": "kelvin@gmail",
+    "password": "12345678"
+}
+
+
+# how to provide a jwt_authorization
+On postman set headers key as Authorization and value as bearer (token) #add a space between bearer and the token (one you got)
